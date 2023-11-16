@@ -1,3 +1,4 @@
+import Banner from './components/Banner'
 import Header from './components/Header'
 import * as S from './styles'
 
@@ -5,9 +6,10 @@ function App() {
   return (
     <>
       <S.GlobalCss />
-      <S.Container>
+      <div className="container">
         <Header />
-      </S.Container>
+      </div>
+      <Banner />
     </>
   )
 }
