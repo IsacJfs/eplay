@@ -4,7 +4,8 @@ export const colors = {
   colorText: '#eeeeee',
   bgPrimary: '#111111',
   bgSecondary: '#333333',
-  bgButton: '#10ACB4'
+  bgButton: '#10ACB4',
+  colorSubtitle: '#A3A3A3'
 }
 
 export const GlobalCss = createGlobalStyle`
