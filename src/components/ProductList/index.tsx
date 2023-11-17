@@ -1,48 +1,29 @@
+import { Game } from '../../models/Game'
 import Product from '../Product'
 import * as S from './style'
 
 export type Props = {
   title: string
   background: 'secundary' | 'primary'
+  games: Game[]
 }
 
-const ProductsList = ({ background, title }: Props) => (
+const ProductsList = ({ background, title, games }: Props) => (
   <div className="container">
     <S.Container background={background}>
       <S.Title>{title}</S.Title>
       <S.ListGrid>
-        <Product
-          category="Action"
-          description="Teste"
-          image="//placehold.it/222x250"
-          infos={['-10%', 'R$ 150,00']}
-          system="windows"
-          title="Jogo Teste"
-        />
-        <Product
-          category="Action"
-          description="Teste"
-          image="//placehold.it/222x250"
-          infos={['-10%', 'R$ 150,00']}
-          system="windows"
-          title="Jogo Teste"
-        />
-        <Product
-          category="Action"
-          description="Teste"
-          image="//placehold.it/222x250"
-          infos={['-10%', 'R$ 150,00']}
-          system="windows"
-          title="Jogo Teste"
-        />
-        <Product
-          category="Action"
-          description="Teste"
-          image="//placehold.it/222x250"
-          infos={['-10%', 'R$ 150,00']}
-          system="windows"
-          title="Jogo Teste"
-        />
+        {games.map((game) => (
+          <Product
+            key={game.id}
+            category={game.category}
+            description={game.description}
+            image={game.image}
+            infos={game.infos}
+            system={game.system}
+            title={game.title}
+          />
+        ))}
       </S.ListGrid>
     </S.Container>
   </div>
